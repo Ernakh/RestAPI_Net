@@ -48,7 +48,7 @@ namespace RestAPI_Net6.Controllers
             [FromBody] Pessoa pessoa)
         {
             if (!ModelState.IsValid)
-                return BadRequest();
+                return BadRequest("Model inválida!");
 
             try
             {
@@ -58,7 +58,7 @@ namespace RestAPI_Net6.Controllers
             }
             catch (Exception e)
             {
-                return BadRequest();
+                return BadRequest(e.Message);
             }
         }
 
@@ -86,7 +86,7 @@ namespace RestAPI_Net6.Controllers
             }
             catch (Exception e)
             {
-                return BadRequest();
+                return BadRequest(e.Message);
             }
         }
 
@@ -106,7 +106,7 @@ namespace RestAPI_Net6.Controllers
             }
             catch (Exception e)
             {
-                return BadRequest();
+                return BadRequest(e.Message);
             }
         }
     }
